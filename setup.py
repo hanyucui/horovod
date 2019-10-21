@@ -212,6 +212,7 @@ def get_tf_libs(build_ext, lib_dirs, cpp_flags):
 def get_tf_abi(build_ext, include_dirs, lib_dirs, libs, cpp_flags):
     last_err = None
     cxx11_abi_macro = '_GLIBCXX_USE_CXX11_ABI'
+    return (cxx11_abi_macro, '0')
     for cxx11_abi in ['0', '1']:
         try:
             lib_file = test_compile(build_ext, 'test_tensorflow_abi',
